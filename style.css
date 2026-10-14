@@ -54,4 +54,25 @@ body {
     font-weight: bold;
 }
 
+/* Button rows */
+.row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+/* Common button styling */
+.btn {
+    flex: 1;
+    height: 58px;
+    border: none;
+    border-radius: 12px;
+    background-color: #334155;
+    color: #ffffff;
+    font-size: 21px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
 
