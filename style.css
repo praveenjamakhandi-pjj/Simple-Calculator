@@ -23,4 +23,35 @@ body {
     padding: 20px;
 }
 
+/* Calculator container */
+.calculator {
+    width: 100%;
+    max-width: 360px;
+    padding: 20px;
+}
+
+/* Calculator body */
+.container {
+    background-color: #1e293b;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+/* Display screen */
+#display {
+    width: 100%;
+    height: 75px;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    outline: none;
+    background-color: #0f172a;
+    color: #ffffff;
+    font-size: 32px;
+    text-align: right;
+    font-weight: bold;
+}
+
 
