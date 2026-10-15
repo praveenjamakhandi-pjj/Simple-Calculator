@@ -74,5 +74,42 @@ body {
     cursor: pointer;
     transition: background-color 0.2s, transform 0.2s;
 }
+/* Hover effect */
+.btn:hover {
+    background-color: #475569;
+    transform: translateY(-2px);
+}
+
+/* Click effect */
+.btn:active {
+    transform: scale(0.95);
+}
+
+/* Operator buttons */
+.operator {
+    background-color: #2563eb;
+}
+
+.operator:hover {
+    background-color: #1d4ed8;
+}
+
+/* Clear button */
+.clear {
+    background-color: #dc2626;
+}
+
+.clear:hover {
+    background-color: #b91c1c;
+}
+
+/* Equals button */
+.equals {
+    background-color: #16a34a;
+}
+
+.equals:hover {
+    background-color: #15803d;
+}
 
 
