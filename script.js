@@ -1,30 +1,33 @@
+
 const display = document.getElementById("display");
+const history = document.getElementById("history");
 const buttons = document.querySelectorAll(".btn");
 
 let expression = "";
 
-
 buttons.forEach(function(button) {
     button.addEventListener("click", function() {
+
         const value = button.textContent;
 
         if (value === "C") {
             expression = "";
             display.value = "0";
+            history.textContent = "";
         }
+
         else if (value === "⌫") {
             expression = expression.slice(0, -1);
             display.value = expression || "0";
+            history.textContent = "";
         }
+
         else if (value === "=") {
             try {
-                if (expression.trim() === "") {
-                    display.value = "0";
-                    return;
-                }
+                if (expression.trim() === "") return;
 
                 if (!/^[0-9+\-*/().\s]+$/.test(expression)) {
-                    throw new Error("Invalid expression");
+                    throw new Error("Invalid");
                 }
 
                 const result = Function(
@@ -32,18 +35,23 @@ buttons.forEach(function(button) {
                 )();
 
                 if (!Number.isFinite(result)) {
-                    display.value = "Error";
-                    expression = "";
-                } else {
-                    expression = String(result);
-                    display.value = expression;
+                    throw new Error("Invalid");
                 }
-            }
-            catch {
+
+                // Show entered expression above result
+                history.textContent = expression + " =";
+
+                // Show result below
+                expression = String(result);
+                display.value = expression;
+
+            } catch {
                 display.value = "Error";
                 expression = "";
+                history.textContent = "";
             }
         }
+
         else {
             if (display.value === "Error") {
                 expression = "";
@@ -51,6 +59,8 @@ buttons.forEach(function(button) {
 
             expression += value;
             display.value = expression;
+            history.textContent = "";
         }
+
     });
 });
